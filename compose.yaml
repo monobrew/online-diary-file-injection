@@ -2,6 +2,7 @@ services:
 
   #nginx
   web:
+    restart: always
     build:
       dockerfile: ./nginx/Dockerfile
     ports:
@@ -9,6 +10,7 @@ services:
 
   #php
   app:
+    restart: always
     build:
       dockerfile: ./php/Dockerfile
     volumes:

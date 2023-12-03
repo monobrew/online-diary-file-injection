@@ -4,7 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta charset="utf-8" /> 
     <title>Na lini</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
+
 </head>
 <body>
     
@@ -19,16 +20,39 @@
         </div>
     </div>
     
-<div class="container">
-    <h1><img src="../img/notes.png" >Notes</h1>
-    <button class="btn"><img src="../img/edit.png" >Create Notes</button>
-    <div class="notes-container">
+<main>
+    <div class="container">
+        <section>
+            <h1><img src="../img/notes.png" >Notes</h1>
+            <button class="btn create-btn"><img src="../img/edit.png" >Create Note</button>
+            <form class="notes-container" action="index.php?page=base" method="post">
+                    <fieldset>
+                        <h3><input type="text" maxlength="50" value="Tytuł" required/></h3>
+                        <textarea rows="6" required></textarea>
+                        <button class="save-btn" type="submit">Zapisz</button>
+                    </fieldset>
+            </form>
+        </section>
+        <section>
+            {% for note in notes %}
+                <article class="diary-entry">
+                    <h3>
+                        {{ note.title }}
+                    </h3>
+                    <p>
+                        {{ note.text }}
+                    </p>
+                    <sub>
+                        {{ note.date }}
+                    </sub>
+                </article>
 
-        <!-- <p contenteditable="true" class="input-box">
-            <img src="images/delete.png">
-        </p> -->
+            {% endfor %}
+            
+        </section>
     </div>
-</div>
+</main>
+
 <script src="scripts/script.js"></script>
 </body>
 </html>

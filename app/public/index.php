@@ -2,9 +2,11 @@
 
 session_start();
 
-include('config.inc.php');
-
 define('IN_INDEX', true);
+
+include('config.inc.php');
+include('helpers.inc.php');
+
 
 require_once __DIR__.'/../composer/vendor/autoload.php';
  
