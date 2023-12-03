@@ -24,7 +24,7 @@ services:
     restart: always
     environment:
       POSTGRES_DB: diary_db
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_PASSWORD: piesek
     volumes:
       - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
 
