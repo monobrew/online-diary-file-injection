@@ -14,9 +14,10 @@ CREATE TABLE "public"."notes" (
 ) WITH (oids = false);
 
 INSERT INTO "notes" ("id", "user_id", "text", "title", "date") VALUES
-(1,	1,	'To jest cośctam',	'Hej',	'2023-12-03'),
-(2,	1,	'To jest trochę inna opowiastka. ŁAŁ',	'Dobry :)',	'2023-12-03'),
-(3,	1,	'To jest inny artykuł.',	':)',	'2023-12-03');
+(nextval('notes_id_seq'),	1,	'To jest cośctam',	'Hej',	'2023-12-03'),
+(nextval('notes_id_seq'),	1,	'To jest trochę inna opowiastka. ŁAŁ',	'Dobry :)',	'2023-12-03'),
+(nextval('notes_id_seq'),	1,	'To jest inny artykuł.',	':)',	'2023-12-03');
+
 
 DROP TABLE IF EXISTS "users";
 CREATE TABLE "public"."users" (
