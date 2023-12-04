@@ -25,7 +25,7 @@ $twig_loader = new \Twig\Loader\FilesystemLoader('./templates');
 $twig = new \Twig\Environment($twig_loader);
 
 
-$stmt = DB::getInstance()->prepare("SELECT title, text, date FROM notes WHERE user_id=:user_id ORDER BY date, id DESC");
+$stmt = DB::getInstance()->prepare("SELECT title, text, date FROM notes WHERE user_id=:user_id ORDER BY date DESC, id DESC");
 $stmt->execute([
     ':user_id' => $user_id
 ]);
