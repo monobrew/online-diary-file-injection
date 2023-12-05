@@ -90,6 +90,11 @@
     cursor: pointer;
 }
 
+.right-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
 /* ... (reszta kodu) ... */
 /* ... (reszta kodu) ... */
 
@@ -162,10 +167,6 @@ textarea {
     font-size: 1em;
 }
 
-.diary-entry p {
-    font-size: 1em;
-}
-
 h3 > input {
     color: inherit;
     font-size: inherit;
@@ -188,4 +189,10 @@ h3 > input {
     padding: 10px 20px;
     margin: 0px 0px 0px 0px;
     cursor: pointer;
+}
+
+pre {
+    white-space: pre-line;
+    overflow: auto;
+    font-size: 1em;
 }

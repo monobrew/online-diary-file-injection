@@ -9,27 +9,28 @@ if (isset($_POST['title']) && isset($_POST['text'])) {
     $text = $_POST['text'];
     $date = date("Y-m-d");
     
-    /*if (isset($_FILES['images'])) {
-        $stmt = DB::getInstance()->prepare("SELECT currval('notes_id_seq')");
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        var_dump($row);
-        exit();
-        $note_id = $row['currval'];
-        
+    $stmt = DB::getInstance()->prepare("SELECT nextval('notes_id_seq')");
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $note_id = $row['nextval'];
 
-        $filepath = STORAGE_PATH .'/' . $note_id . '_' .$_FILES['images']['name'];
+    if (isset($_FILES['images'])) {
+        
+        $filename = $note_id . '_' .$_FILES['images']['name'];
+        $filepath = STORAGE_PATH .'/' . $filename;
 
         move_uploaded_file($_FILES['images']['tmp_name'], $filepath);
 
-        $stmt = DB::getInstance()->prepare("INSERT INTO media (note_id, filename) VALUES (:note_id, :filepath)");
+        $stmt = DB::getInstance()->prepare("INSERT INTO media (note_id, filename) VALUES (:note_id, :filename)");
         $stmt->execute([
             ':note_id' => $note_id,
-            ':filepath' => $filepath
+            ':filename' => $filename
         ]);
-    }*/
+    }
 
-    $stmt = DB::getInstance()->prepare("INSERT INTO notes (user_id, title, text, date) VALUES (:user_id, :title, :text, :date)");
+    $stmt = DB::getInstance()->prepare("INSERT INTO notes (id, user_id, title, text, date) VALUES (:note_id, :user_id, :title, :text, :date)");
     $stmt->execute([
+        ':note_id' => $note_id,
         ':user_id' => $user_id,
         ':title' => $title,
         ':text' => $text,

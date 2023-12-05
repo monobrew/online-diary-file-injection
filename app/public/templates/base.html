@@ -29,7 +29,7 @@
                     <fieldset>
                         <h3><input name="title" type="text" maxlength="50" value="Tytuł" required/></h3>
                         <textarea name="text" rows="6" required></textarea>
-                        <input class="file-input" type="file" name="images" multiple/>
+                        <input class="file-input" type="file" name="images"/>
                         <button class="save-btn" type="submit">Zapisz</button>
                     </fieldset>
             </form>
@@ -40,12 +40,15 @@
                     <h3>
                         {{ note.title }}
                     </h3>
-                    <p>
+                    <pre>
                         {{ note.text }}
-                    </p>
+                    </pre>
                     <sub>
                         {{ note.date }}
                     </sub>
+                    {% if note.filename is not empty %}
+                        <img src="../storage/{{ note.filename }}" />
+                    {% endif %}
                 </article>
 
             {% endfor %}
