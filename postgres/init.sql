@@ -62,12 +62,7 @@ Nec nam aliquam sem et tortor consequat. Orci nulla pellentesque dignissim enim.
 Sagittis purus sit amet volutpat consequat mauris nunc. Nisl pretium fusce id velit ut. Elementum nibh tellus molestie nunc non blandit. Enim sed faucibus turpis in eu mi bibendum neque. Lectus urna duis convallis convallis. Gravida dictum fusce ut placerat. Vivamus at augue eget arcu dictum varius duis at. Blandit cursus risus at ultrices mi. Pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum. Sagittis vitae et leo duis. Dolor sit amet consectetur adipiscing elit duis tristique sollicitudin nibh. Risus feugiat in ante metus dictum at. Ultrices gravida dictum fusce ut. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus.',	'Tytuł',	'2023-12-03'),
 (nextval('notes_id_seq'),	1,	'XD',	'XD',	'2023-12-04'),
 (nextval('notes_id_seq'),	1,	'asd',	'Tytuł',	'2023-12-04'),
-(nextval('notes_id_seq'),	1,	'asd',	'Tytuł',	'2023-12-04'),
-(nextval('notes_id_seq'),	1,	'adas
-fesgf
-gdfbfhgmn
-hmfg
-',	'Tytuł',	'2023-12-04',
+(nextval('notes_id_seq'),	1,	'asd',	'Tytuł',	'2023-12-04');
 
 DROP TABLE IF EXISTS "users";
 CREATE TABLE "public"."users" (
