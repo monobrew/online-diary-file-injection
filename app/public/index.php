@@ -20,3 +20,4 @@ if ((isset($_GET['page'])) && file_exists($_GET['page'] . '.php')) {
     $twig = new \Twig\Environment($twig_loader);
     echo $twig->render('not_found.html');
 }
+
