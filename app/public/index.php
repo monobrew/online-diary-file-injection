@@ -3,6 +3,7 @@
 session_start();
 
 define('IN_INDEX', true);
+define('STORAGE_PATH', __DIR__ . '/../storage');
 
 include('config.inc.php');
 include('helpers.inc.php');

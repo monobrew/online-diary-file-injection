@@ -25,10 +25,11 @@
         <section>
             <h1><img src="../img/notes.png" >Notes</h1>
             <button class="btn create-btn"><img src="../img/edit.png" >Create Note</button>
-            <form class="notes-container" action="index.php?page=main" method="post">
+            <form class="notes-container" action="index.php?page=main" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <h3><input name="title" type="text" maxlength="50" value="Tytuł" required/></h3>
                         <textarea name="text" rows="6" required></textarea>
+                        <input class="file-input" type="file" name="images" multiple/>
                         <button class="save-btn" type="submit">Zapisz</button>
                     </fieldset>
             </form>
