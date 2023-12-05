@@ -21,8 +21,6 @@ if (isset($_POST['title']) && isset($_POST['text']) ) {
     unset($_POST['text']);
 }
 
-$twig_loader = new \Twig\Loader\FilesystemLoader('./templates');
-$twig = new \Twig\Environment($twig_loader);
 
 
 $stmt = DB::getInstance()->prepare("SELECT title, text, date FROM notes WHERE user_id=:user_id ORDER BY date DESC, id DESC");
@@ -38,5 +36,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                              "title" => $row["title"],
                              "date" => $row["date"]));
 }
+
+$twig_loader = new \Twig\Loader\FilesystemLoader('./templates');
+$twig = new \Twig\Environment($twig_loader);
 
 echo $twig->render('base.html', ["notes" => $notes]);
