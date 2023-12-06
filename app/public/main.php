@@ -9,7 +9,7 @@ $stmt->execute([
 ]);
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    copy(STORAGE_PATH . '/' . $row["filename"], __DIR__ . '/img/' . $row["filename"]); 
+    copy(STORAGE_PATH . '/' . $row["filename"], __DIR__ . '/img/blog_img/' . $row["filename"]); 
 }
 
 $stmt = DB::getInstance()->prepare("SELECT title, text, filename, date FROM notes LEFT JOIN media ON notes.id=media.note_id WHERE user_id=:user_id ORDER BY date DESC, notes.id DESC");
