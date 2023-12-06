@@ -48,5 +48,5 @@ unset($_POST['title']);
 unset($_POST['text']);
 unset($_FILES['images']);
 
-header("Location: index.php?page=main");
+header("Location: index.php");
 exit();
