@@ -1,7 +1,12 @@
 <?php
 if (!defined('IN_INDEX')) { exit("This file can only be included in index.php."); }
 
-$user_id = 1;
+if (isset($_SESSION['login']) && (!$_SESSION['logged_in'])) {
+    header('Location: index.php?page=login');
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
 
 if (isset($_POST['title']) && isset($_POST['text'])) {
     

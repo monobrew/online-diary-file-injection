@@ -1,7 +1,12 @@
 <?php
 if (!defined('IN_INDEX')) { exit("This file can only be included in index.php."); }
 
-$user_id = 1;
+if (!(isset($_SESSION['logged_in']))) {
+    header('Location: index.php?page=login');
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
 
 $stmt = DB::getInstance()->prepare("SELECT filename FROM notes, media, users WHERE notes.id=media.note_id AND notes.user_id=:user_id");
 $stmt->execute([
@@ -38,5 +43,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 $twig_loader = new \Twig\Loader\FilesystemLoader('./templates');
 $twig = new \Twig\Environment($twig_loader);
 
-echo $twig->render('base.html', ["notes" => $notes]);
+echo $twig->render('base.html', ["notes" => $notes,
+                                'logged_in' => true]);
 

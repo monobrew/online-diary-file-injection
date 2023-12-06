@@ -14,7 +14,15 @@
         </div>
         <div class="right-menu">
             <p><a href="index.php?page=main">Notes</a></p>
+
+            {% if not logged_in %}
             <p><a href="index.php?page=login">Login</a></p>
+            {% endif %}
+
+            {% if logged_in %}
+            <p><a href="index.php?page=logout">Logout</a></p>
+            {% endif %}
+
             <p><a href="index.php?page=signup">Sign Up</a></p>
         </div>
     </div>

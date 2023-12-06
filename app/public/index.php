@@ -10,7 +10,7 @@ include('helpers.inc.php');
 
 
 require_once __DIR__.'/../composer/vendor/autoload.php';
- 
+
 if ((isset($_GET['page'])) && file_exists($_GET['page'] . '.php')) {
     include($_GET['page'] . '.php');
 } elseif (!isset($_GET['page'])) {
