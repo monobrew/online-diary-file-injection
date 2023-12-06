@@ -1,5 +1,5 @@
 # Przygotowanie środowiska
-Do wykonania zadań potrzebne będzie środowisko narzędzie do konteneryzacji **docker-desktop**, które można pobrać ze strony:
+Do wykonania zadań potrzebne będzie narzędzie do konteneryzacji **docker-desktop**, które można pobrać ze strony:
 ```
 https://www.docker.com/products/docker-desktop/
 ```
