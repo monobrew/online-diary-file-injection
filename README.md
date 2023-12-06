@@ -52,20 +52,19 @@ Wykorzystaj informacje znalezione w pliku config.inc.php do wyświetlenia zawart
 Do wykonania polecenia SQL możesz użyć rozszerzenia PDO załadowanego na tym serwerze:
 ```php
 <?php
-require_once __DIR__.'/../composer/vendor/autoload.php';
+require_once __DIR__.'/../../../composer/vendor/autoload.php';
 
-$db_host = '';
-$db_name = '';
-$db_user = '';
-$db_password = '';
+$db_host = '--';
+$db_name = '--------';
+$db_user = '--------';
+$db_password = '------';
 
 $dbh = new PDO('pgsql:host=' . $db_host . ';dbname=' . $db_name, $db_user, $db_password);
-$dbh->prepare('-------tutaj wpisz polecenie sql---------- ');
-$dbh->execute();
+$sth =$dbh->prepare('---------polecenie sql---------');
+$sth->execute();
 
-while($row = $dbh->fetch(PDO::FETCH_NUM)) {
-    echo $row[0];
+while($row = $sth->fetch(PDO::FETCH_NUM)) {
+    echo $row[0]. '<br>';
 }
-
 ```
 - Prześlij skrypt php zwracający listę loginów wszystkich użytkowników
