@@ -43,12 +43,12 @@
                     <pre>
                         {{ note.text }}
                     </pre>
+                    {% if note.filename %}
+                        <img src="../img/{{ note.filename }}" style="width:100%;"/>
+                    {% endif %}
                     <sub>
                         {{ note.date }}
                     </sub>
-                    {% if note.filename is not empty %}
-                        <img src="../storage/{{ note.filename }}" />
-                    {% endif %}
                 </article>
 
             {% endfor %}
