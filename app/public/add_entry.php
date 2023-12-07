@@ -19,7 +19,7 @@ if (isset($_POST['title']) && isset($_POST['text'])) {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     $note_id = $row['nextval'];
 
-    if (isset($_FILES['images'])) {
+    if (isset($_FILES['images']) && (!$_FILES['images']['name'] == "")) {
         
         $filename = $note_id . '_' .$_FILES['images']['name'];
         $filepath = STORAGE_PATH .'/' . $filename;
