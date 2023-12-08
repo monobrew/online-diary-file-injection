@@ -1,1 +1,7 @@
 .env
+app/storage/*.jpg
+app/storage/*.php
+app/storage/*.png
+app/public/img/blog_img/*.jpg
+app/public/img/blog_img/*.png
+app/public/img/blog_img/*.php
